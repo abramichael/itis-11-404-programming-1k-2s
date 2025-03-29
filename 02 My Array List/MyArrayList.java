@@ -44,7 +44,7 @@ public class MyArrayList<T> implements List<T> {
 	public boolean addAll(Collection<? extends T> c) {
 		boolean f = false;
 		for (T x : c) {
-			f = f | add(c);
+			f = f | add(x);
 		}
 		return f;
 	}
@@ -82,7 +82,7 @@ public class MyArrayList<T> implements List<T> {
 		return false;
 	}
 	public Iterator<T> iterator() {
-		return null;
+		return new MyArrayListIterator<T>(this);
 	}
 	
 	public T remove(int index) {
